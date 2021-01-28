@@ -15,7 +15,7 @@ from torch import optim
 import torch.nn.functional as F
 
 
-def imshow(img,name,flag = True,text=None,should_save=False):
+def imshow(img,name,text=None,should_save=False,flag=True):
     if flag:
       npimg = img.numpy()
     plt.axis("off")
