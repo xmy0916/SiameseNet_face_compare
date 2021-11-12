@@ -54,8 +54,6 @@ class SiameseNetwork(nn.Module):
     def forward_once(self, x):
         self.cnt += 1
         output = self.cnn1(x)
-        draw_np = output.cpu().detach().reshape([8,1,100,100])
-        imshow(torchvision.utils.make_grid(draw_np),name='output/pic{}'.format(self.cnt))
         output = output.view(output.size()[0], -1)
         output = self.fc1(output)
         return output
